@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Adventure</title>
+    <link rel="stylesheet" href="istyle.css">
+    <style>
+        #videoContainer {
+            display: none;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-title">Learning Adventure</div>
+    <button class="start-btn" onclick="playVideoAndRedirect()">Start Learning</button>
+    
+    <video id="videoContainer" controls>
+        <source src="level1preview.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    
+    <script>
+        function playVideoAndRedirect() {
+            const videoContainer = document.getElementById('videoContainer');
+            const startButton = document.querySelector('.start-btn');
+            
+            // Hide start button, show video
+            startButton.style.display = 'none';
+            videoContainer.style.display = 'block';
+            videoContainer.play();
+            
+            // Redirect to level1.html after video ends
+            videoContainer.addEventListener('ended', () => {
+                window.location.href = 'level1.html';
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level 1: Periods Education</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 600px;
+        }
+        .edu-card {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            padding: 30px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        #continueBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+        }
+        .modal-dialog {
+            max-width: 80%;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            min-height: 80vh;
+        }
+        .modal-content {
+            width: 100%;
+            background: transparent;
+            border: none;
+        }
+        #educationVideo {
+            max-width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <div class="content-wrapper">
+        <h1 class="text-white mb-4 text-center">Level 1</h1>
+
+        <div class="edu-card">
+            <h2 class="text-center mb-4">What is Periods?</h2>
+            <p class="text-muted">
+                A period is when a girl's body goes through a natural change. Every month, her body gets ready to have a baby, but if there's no baby, her body gets rid of the extra stuff it doesn't need. This comes out of her body as blood, and it's called a period. It usually happens once a month and can last a few days. It's just part of growing up, and every girl goes through it when she's old enough.
+            </p>
+        </div>
+    </div>
+
+    <button id="continueBtn" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#videoModal">
+        Continue
+    </button>
+
+    <div class="modal fade" id="videoModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <video id="educationVideo" controls>
+                        <source src="file:///C:/Users/NASREEN/Videos/Captures/WhatsApp%20Video%202024-12-27%20at%2020.38.33.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('educationVideo').addEventListener('ended', function() {
+            window.location.href = 'level2.html';
+        });
+    </script>
+</body>
+</html>
