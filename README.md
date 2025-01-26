@@ -43,7 +43,8 @@ For Software:
 A quick tool to calculate your BMI and check if your weight is within a healthy range
 
 # Diagrams
-![Workflow]([diagramsrc](https://github.com/user-attachments/assets/4f588f99-44de-45c5-a4bd-8f6f2403f70a)
+![diagramsrc](https://github.com/user-attachments/assets/e934f7ab-085a-49e4-8dd7-5192537b8c2b)
+
 
 ## Team Contributions
 - Nasreen: Coding, Workflow diagram creation
