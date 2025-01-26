@@ -1,7 +1,4 @@
 ### Team Members
-- Member 1: [Name] - [College]
-- Member 2: [Name] - [College]
-- Member 3: [Name] - [College]
 - Member 1: Nasreen P - MES College of Engineering, Kuttippuram
 - Member 2: Reema Sherin - MES College of Engineering, Kuttippuram
 - Member 3: Ranjana K - MES College of Engineering, Kuttippuram
