@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myth or Fact Quiz</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+        }
+        .quiz-container {
+            background-color: rgba(255,255,255,0.9);
+            border-radius: 15px;
+            padding: 30px;
+            width: 100%;
+            max-width: 800px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .question {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .btn-group {
+            margin-left: 15px;
+        }
+        .end-game-btn {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1 class="text-center mb-4">Quiz Time</h1>
+        
+        <div class="question">
+            <p>statement 1: You can't go swimming during your period..</p>
+            <div class="btn-group" role="group">
+                <button onclick="checkAnswer(1, 'myth')" class="btn btn-outline-primary">Myth</button>
+                <button onclick="checkAnswer(1, 'fact')" class="btn btn-outline-primary">Fact</button>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>statement 2: Irregular periods can be caused by stress or changes in diet.</p>
+            <div class="btn-group" role="group">
+                <button onclick="checkAnswer(2, 'myth')" class="btn btn-outline-primary">Myth</button>
+                <button onclick="checkAnswer(2, 'fact')" class="btn btn-outline-primary">Fact</button>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>statement 3: The first period is called menarche</p>
+            <div class="btn-group" role="group">
+                <button onclick="checkAnswer(3, 'myth')" class="btn btn-outline-primary">Myth</button>
+                <button onclick="checkAnswer(3, 'fact')" class="btn btn-outline-primary">Fact</button>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>statement 4: Only girls need to learn about periods.</p>
+            <div class="btn-group" role="group">
+                <button onclick="checkAnswer(4, 'myth')" class="btn btn-outline-primary">Myth</button>
+                <button onclick="checkAnswer(4, 'fact')" class="btn btn-outline-primary">Fact</button>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>statement 5: cramps are normal during periods.</p>
+            <div class="btn-group" role="group">
+                <button onclick="checkAnswer(5, 'myth')" class="btn btn-outline-primary">Myth</button>
+                <button onclick="checkAnswer(5, 'fact')" class="btn btn-outline-primary">Fact</button>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>statement 6:Menstrual blood is dirty.</p>
+            <div class="btn-group" role="group">
+                <button onclick="checkAnswer(6, 'myth')" class="btn btn-outline-primary">Myth</button>
+                <button onclick="checkAnswer(6, 'fact')" class="btn btn-outline-primary">Fact</button>
+            </div>
+        </div>
+    </div>
+
+    <button onclick="window.location.href='end.html'" class="btn btn-danger end-game-btn">End Game</button>
+
+    <script>
+        function checkAnswer(questionNumber, selectedAnswer) {
+            const correctAnswers = {
+                1: 'myth',
+                2: 'fact',
+                3: 'fact',
+                4: 'myth',
+                5: 'fact',
+                6: 'myth'
+            };
+
+            if (selectedAnswer === correctAnswers[questionNumber]) {
+                if ([1, 4, 6].includes(questionNumber) && selectedAnswer === 'myth') {
+                    alert('Hurray!! Correct answer');
+                }
+                if ([2, 3, 5].includes(questionNumber) && selectedAnswer === 'fact') {
+                    alert('Hurray!! Correct answer');
+                }
+            } else {
+                alert('Incorrect answer! Try again.');
+            }
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
