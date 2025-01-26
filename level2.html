@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level 2: Product Selection</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(45deg, #4ECDC4, #FF6B6B);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            max-width: 600px;
+        }
+        .product-image {
+            cursor: pointer;
+            transition: transform 0.3s, opacity 0.3s;
+            border: 3px solid transparent;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+        }
+        .product-image.selected {
+            border-color: #28a745;
+            transform: scale(1.05);
+        }
+        #continueBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="text-white mb-5 text-center">Level 2</h1>
+
+    <div class="container text-center">
+        <h2 class="text-white mb-4">Shopping List</h2>
+        
+        <div class="image-container">
+            <div class="image-grid">
+                <img src="heatbags.jpeg" data-index="1" class="img-fluid product-image" alt="Image 1">
+                <img src="crackers.jpeg" data-index="2" class="img-fluid product-image" alt="Image 2">
+                <img src="chocolates.jpeg" data-index="3" class="img-fluid product-image" alt="Image 3">
+                <img src="makeup.jpeg" data-index="4" class="img-fluid product-image" alt="Image 4">
+                <img src="napkin.jpeg" data-index="5" class="img-fluid product-image" alt="Image 5">
+                <img src="charger.jpeg" data-index="6" class="img-fluid product-image" alt="Image 6">
+            </div>
+        </div>
+
+        <button id="continueBtn" class="btn btn-success mt-4">Continue</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const images = document.querySelectorAll('.product-image');
+        const continueBtn = document.getElementById('continueBtn');
+
+        images.forEach(img => {
+            img.addEventListener('click', () => {
+                img.classList.toggle('selected');
+            });
+        });
+
+        continueBtn.addEventListener('click', () => {
+            const selectedImages = document.querySelectorAll('.product-image.selected');
+            const selectedIndices = Array.from(selectedImages).map(img => parseInt(img.dataset.index));
+
+            const correctSelection = [1, 3, 5];
+            const incorrectSelection = [2, 4, 6];
+
+            const isCorrectSelection = selectedIndices.every(index => correctSelection.includes(index)) && 
+                                       selectedIndices.length === 3;
+            const isIncorrectSelection = selectedIndices.every(index => incorrectSelection.includes(index)) && 
+                                         selectedIndices.length === 3;
+
+            if (isCorrectSelection) {
+                window.location.href = 'bmicard.html';
+            } else if (isIncorrectSelection) {
+                alert('Try again! Select the correct images.');
+                window.location.reload();
+            } else {
+                alert('Try again! Select the correct images.');
+                window.location.reload();
+            }
+        });
+    </script>
+</body>
+</html>
